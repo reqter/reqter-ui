@@ -1,0 +1,218 @@
+@import "./icons.css";
+@import "./colors.scss";
+@import "./variables.scss";
+body {
+  overflow-x: hidden;
+}
+*::-webkit-scrollbar,
+div::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  transition: 1s ease-in-out;
+  -webkit-transition-duration: 0.3s;
+}
+*::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  -webkit-border-radius: 10px;
+  transition: 1s ease-in-out;
+  -webkit-transition-duration: 0.3s;
+}
+html::-webkit-scrollbar-thumb:hover,
+div::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(145, 134, 134);
+  transition: 1s ease-in-out;
+  -webkit-transition-duration: 0.3s;
+}
+
+html::-o-scrollbar,
+div::-o-scrollbar {
+  width: 9px;
+  transition: 1s ease-in-out;
+  transition-duration: 0.3s;
+}
+html::-o-scrollbar-thumb,
+div::-o-scrollbar-thumb {
+  background-color: lightgray;
+  -webkit-border-radius: 10px;
+  transition: 1s ease-in-out;
+  transition-duration: 0.3s;
+}
+html::-o-scrollbar-thumb:hover,
+div::-o-scrollbar-thumb:hover {
+  transition: 1s ease-in-out;
+  transition-duration: 0.3s;
+}
+
+html::-moz-scrollbar,
+div::-moz-scrollbar {
+  width: 9px;
+  transition: 1s ease-in-out;
+  transition-duration: 0.3s;
+}
+html::-moz-scrollbar-thumb,
+div::-moz-scrollbar-thumb {
+  background-color: lightgray;
+  -webkit-border-radius: 10px;
+  transition: 1s ease-in-out;
+  transition-duration: 0.3s;
+}
+html::-moz-scrollbar-thumb:hover,
+div::-moz-scrollbar-thumb:hover {
+  background-color: rgb(145, 134, 134);
+  transition: 1s ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.custom_checkbox {
+  margin-top: 20px;
+  display: flex;
+  .left {
+    padding-right: 5px;
+    .radio {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .radio input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkround {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border-color: rgb(56, 132, 255);
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 50%;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .radio input:checked ~ .checkround {
+      background-color: #fff;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkround:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .radio input:checked ~ .checkround:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .radio .checkround:after {
+      left: 2px;
+      top: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgb(56, 132, 255);
+    }
+
+    /* The check */
+    .check {
+      display: block;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      padding-right: 15px;
+      cursor: pointer;
+      font-size: 18px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .check input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    & label:first-child {
+      cursor: pointer;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    & label {
+      margin: 0;
+      margin-top: -5px;
+    }
+  }
+}
+.inputSwitch {
+  display: flex;
+  flex-direction: column;
+  & span:nth-child(2) {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+  .inputSwitch-content {
+    padding-top: 15px;
+    button {
+      margin: 0 10px;
+    }
+  }
+}
+.unkownFileType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.assetFile {
+  .un-icon {
+    font-size: 18px;
+  }
+  .un-text {
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
+.fileUploader {
+  .un-icon {
+    font-size: 25px !important;
+  }
+  .un-text {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.ajax-button {
+  display: flex;
+  span {
+    margin: 0 5px;
+  }
+}
